@@ -1,0 +1,24 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 45px;
+  margin-bottom: 50px;
+
+  &__links {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+
+    &__link {
+      font-size: 24px;
+      text-decoration: none;
+      color: #ff6060;
+
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+  }
+}
