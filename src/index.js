@@ -3,9 +3,8 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Apropos from './pages/Apropos'
+import Error from './pages/Error'
 import Header from './components/Header'
-import Error from './components/Error'
-import Banner from './components/Banner'
 import Footer from './components/Footer'
 import './sass/main.scss'
 
@@ -14,7 +13,6 @@ ReactDOM.render(
     <Router>
       <div className="content">
         <Header />
-        <Banner />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/apropos" element={<Apropos />} />
