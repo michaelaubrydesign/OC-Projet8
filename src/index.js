@@ -7,6 +7,7 @@ import Error from './pages/Error'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import './sass/main.scss'
+import '@fortawesome/fontawesome-free/css/all.css'
 
 ReactDOM.render(
   <React.StrictMode>
