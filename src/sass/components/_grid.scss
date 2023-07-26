@@ -1,0 +1,12 @@
+.grid {
+  display: grid;
+  grid-template-columns: 340px 340px 340px;
+  grid-template-rows: 340px 340px;
+  grid-column-gap: 60px;
+  grid-row-gap: 50px;
+
+  background-color: #f6f6f6;
+  border-radius: 25px;
+  padding: 55px 50px 45px 50px;
+  margin-bottom: 50px;
+}
