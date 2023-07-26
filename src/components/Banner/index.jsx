@@ -1,11 +1,15 @@
-import homeimg from '../../assets/homeimg.jpg'
-import '../../sass/main.scss'
+function Banner({ title, backgroundImage }) {
+  const bannerStyle = {
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    maxWidth: '100%',
+  }
 
-function Banner() {
   return (
-    <div className="banner">
-      {/* <img className="banner__image" src={homeimg} alt="Falaise" /> */}
-      <div className="banner__filter"></div>
+    <div className="banner" style={bannerStyle}>
+      <div className="banner__shadow"></div>
+      {title && <h1>{title}</h1>}
     </div>
   )
 }
