@@ -1,9 +1,12 @@
-function Fiche() {
+import Banner from '../../components/Banner'
+import apropimg from '../../assets/apropimg.jpg'
+
+function Apropos() {
   return (
     <div>
-      <h1>Page À propos</h1>
+      <Banner backgroundImage={apropimg} />
     </div>
   )
 }
 
-export default Fiche
+export default Apropos
