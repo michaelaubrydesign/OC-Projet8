@@ -1,9 +1,17 @@
-function App() {
+import Banner from '../../components/Banner'
+import Grid from '../../components/Grid'
+import homeimg from '../../assets/homeimg.jpg'
+
+function HomePage() {
   return (
     <div>
-      <h1>Page index.jsx</h1>
+      <Banner
+        title="Chez vous, partout et ailleurs"
+        backgroundImage={homeimg}
+      />
+      <Grid />
     </div>
   )
 }
 
-export default App
+export default HomePage
