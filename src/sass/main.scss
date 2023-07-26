@@ -1,7 +1,10 @@
 @import './base/typography';
 @import './base/base';
+@import './base/error';
 
 @import './layout/header';
 @import './layout/footer';
 
 @import './components/banner';
+@import './components/grid';
+@import './components/card';
