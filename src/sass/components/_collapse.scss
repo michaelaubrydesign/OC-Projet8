@@ -1,0 +1,39 @@
+.collapse {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px 10px 15px;
+    border-radius: 5px;
+    background-color: #ff6060;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+
+    .chevron-container {
+      cursor: pointer;
+      transition: transform 0.8s;
+    }
+
+    i {
+      font-size: 24px;
+    }
+
+    &.expanded .chevron-container {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__content {
+    position: relative;
+    top: -5px;
+    z-index: 1;
+    padding: 25px 20px 20px 20px;
+    background-color: #f6f6f6;
+    color: #ff6060;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 0px 0px 5px 5px;
+    bottom: 20px;
+  }
+}
