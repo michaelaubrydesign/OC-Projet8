@@ -1,0 +1,34 @@
+.card {
+  width: 340px;
+  height: 340px;
+  border-radius: 10px;
+  background-color: #ff6060;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    object-fit: cover;
+    max-height: 340px;
+  }
+
+  &__shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.5),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  span {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    color: white;
+    max-width: 80%;
+  }
+}
