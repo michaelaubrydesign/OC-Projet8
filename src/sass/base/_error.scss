@@ -1,0 +1,19 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ff6060;
+  gap: 80px;
+  padding-top: 80px;
+  padding-bottom: 140px;
+
+  span {
+    font-size: 288px;
+    font-weight: 700;
+  }
+
+  &__link {
+    color: #ff6060;
+    font-size: 18px;
+  }
+}
