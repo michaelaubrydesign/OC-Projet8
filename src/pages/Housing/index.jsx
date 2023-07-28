@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Collapse from '../../components/Collapse'
 import jsonData from '../../datas/housing.json'
 
 function HousingDetails() {
@@ -48,17 +49,51 @@ function HousingDetails() {
           </div>
         </div>
         <div className="housing__infos__host">
-          <span>
-            {housingData.host.name.split(' ').map((part, index) => (
-              <React.Fragment key={index}>
-                {part}
-                {index !== housingData.host.name.split(' ').length - 1 && (
-                  <br />
-                )}
-              </React.Fragment>
+          <div className="housing__infos__host__person">
+            <span>
+              {housingData.host.name.split(' ').map((part, index) => (
+                <React.Fragment key={index}>
+                  {part}
+                  {index !== housingData.host.name.split(' ').length - 1 && (
+                    <br />
+                  )}
+                </React.Fragment>
+              ))}
+            </span>
+            <img
+              src={housingData.host.picture}
+              alt={housingData.host.name}
+            ></img>
+          </div>
+          <div className="housing__infos__host__rating">
+            {[...Array(5)].map((_, index) => (
+              <i
+                key={index}
+                className={`fas fa-star star-rating ${
+                  index < housingData.rating
+                    ? 'housing__infos__host__rating--active'
+                    : ''
+                }`}
+              />
             ))}
-          </span>
-          <img src={housingData.host.picture} alt={housingData.host.name}></img>
+          </div>
+        </div>
+      </div>
+      <div className="housing__collapses">
+        <div className="housing__collapses__left">
+          <Collapse title="Description" content={housingData.description} />
+        </div>
+        <div className="housing__collapses__right">
+          <Collapse
+            title="Équipements"
+            content={
+              <ul>
+                {housingData.equipments.map((equipment, index) => (
+                  <li key={index}>{equipment}</li>
+                ))}
+              </ul>
+            }
+          />
         </div>
       </div>
     </div>
