@@ -22,3 +22,22 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .nav {
+    margin-top: 20px;
+    margin-bottom: 30px;
+
+    img {
+      width: 145px;
+    }
+
+    &__links {
+      gap: 25px;
+
+      &__link {
+        font-size: 12px;
+      }
+    }
+  }
+}

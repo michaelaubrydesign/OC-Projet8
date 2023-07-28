@@ -1,5 +1,4 @@
 .banner {
-  display: block;
   height: 223px;
   background-color: #ff6060;
   border-radius: 25px;
@@ -22,5 +21,13 @@
   h1 {
     position: absolute;
     color: white;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    justify-content: left;
+    padding-left: 16px;
+    margin-bottom: 20px;
   }
 }
