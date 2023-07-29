@@ -1,4 +1,4 @@
-function Banner({ title, backgroundImage }) {
+function Banner({ title, backgroundImage, className }) {
   const bannerStyle = {
     backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
@@ -7,7 +7,7 @@ function Banner({ title, backgroundImage }) {
   }
 
   return (
-    <div className="banner" style={bannerStyle}>
+    <div className={`banner ${className}`} style={bannerStyle}>
       <div className="banner__shadow"></div>
       {title && <h1>{title}</h1>}
     </div>

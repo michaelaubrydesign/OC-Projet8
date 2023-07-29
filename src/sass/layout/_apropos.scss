@@ -7,3 +7,14 @@
   margin: auto;
   margin-bottom: 30px;
 }
+
+@media screen and (max-width: 768px) {
+  .apropos__banner {
+    height: 223px;
+  }
+
+  .aprop__content {
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+}

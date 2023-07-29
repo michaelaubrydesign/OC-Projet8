@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px 10px 15px;
+    padding: 10px 10px 10px 15px;
     border-radius: 5px;
     background-color: #ff6060;
     color: #fff;
@@ -35,5 +35,19 @@
     font-weight: 400;
     border-radius: 0px 0px 5px 5px;
     bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .collapse {
+    &__header {
+      i {
+        font-size: 13px;
+      }
+    }
+
+    &__content {
+      font-size: 12px;
+    }
   }
 }

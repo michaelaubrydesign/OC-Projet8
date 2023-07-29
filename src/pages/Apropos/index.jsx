@@ -5,7 +5,7 @@ import apropimg from '../../assets/apropimg.jpg'
 function Apropos() {
   return (
     <div>
-      <Banner backgroundImage={apropimg} />
+      <Banner backgroundImage={apropimg} className="apropos__banner" />
       <div className="aprop__content">
         <Collapse
           title="Fiabilité"
