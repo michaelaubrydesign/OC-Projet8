@@ -51,9 +51,13 @@ function HousingDetails() {
         <div className="housing__infos__host">
           <div className="housing__infos__host__person">
             <span>
+              {/* Séparer le nom de l'hôte en utilisant l'espace comme séparateur et mapper sur chaque partie */}
               {housingData.host.name.split(' ').map((part, index) => (
                 <React.Fragment key={index}>
+                  {/* Afficher la partie actuelle du nom */}
                   {part}
+
+                  {/* Ajouter un élément <br /> après chaque partie, sauf la dernière */}
                   {index !== housingData.host.name.split(' ').length - 1 && (
                     <br />
                   )}
