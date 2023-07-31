@@ -13,7 +13,7 @@ function Collapse({ title, content }) {
         <h3>{title}</h3>
         <div className="chevron-container" onClick={toggleCollapse}>
           <i
-            className={`fa-solid fa-chevron-${isExpanded ? 'up' : 'down'}`}
+            className={`fa-solid fa-chevron-${isExpanded ? 'down' : 'up'}`}
           ></i>
         </div>
       </div>
