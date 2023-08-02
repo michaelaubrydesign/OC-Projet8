@@ -2,12 +2,12 @@
 @import './base/base';
 @import './base/error';
 
-@import './layout/header';
-@import './layout/footer';
-@import './layout/apropos';
-@import './layout/housing';
-
 @import './components/banner';
 @import './components/grid';
 @import './components/card';
 @import './components/collapse';
+
+@import './layout/header';
+@import './layout/footer';
+@import './layout/apropos';
+@import './layout/housing';
