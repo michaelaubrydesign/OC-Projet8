@@ -1,40 +1,61 @@
 import React from 'react'
-import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import Collapse from '../../components/Collapse'
 import jsonData from '../../datas/housing.json'
 
 function HousingDetails() {
+  // Récupère l'ID du logement à partir des paramètres d'URL
   const { id } = useParams()
+  // Recherche le logement correspondant dans le fichier JSON à partir de l'ID
   const housingData = jsonData.find((item) => item.id === id)
+  const navigate = useNavigate()
 
-  const { pictures } = housingData
+  // Utilise le state pour conserver l'index de l'image actuellement affichée
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+  useEffect(() => {
+    // Si housingData n'existe pas, naviguez vers la page d'erreur
+    if (!housingData) {
+      navigate('/error')
+    }
+  }, [])
+
+  // Fonction pour passer à l'image précédente dans le carousel
   const handlePrevImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === 0 ? pictures.length - 1 : prevIndex - 1,
+      prevIndex === 0 ? housingData.pictures.length - 1 : prevIndex - 1,
     )
   }
 
+  // Fonction pour passer à l'image suivante dans le carousel
   const handleNextImage = () => {
     setCurrentImageIndex((prevIndex) =>
-      prevIndex === pictures.length - 1 ? 0 : prevIndex + 1,
+      prevIndex === housingData.pictures.length - 1 ? 0 : prevIndex + 1,
     )
+  }
+
+  if (!housingData) {
+    return null
   }
 
   return (
     <div className="housing">
-      {pictures.length > 1 ? ( // Condition pour afficher le carousel si pictures contient plus d'une image
+      {housingData.pictures.length > 1 ? ( // Condition pour afficher le carousel si pictures contient plus d'une image
         <div className="housing__carousel">
-          <img src={pictures[currentImageIndex]} alt={housingData.title} />
+          <img
+            src={housingData.pictures[currentImageIndex]}
+            alt={housingData.title}
+          />
           <i className="fas fa-chevron-left" onClick={handlePrevImage}></i>
-          <span>{`${currentImageIndex + 1}/${pictures.length}`}</span>
+          <span>{`${currentImageIndex + 1}/${
+            housingData.pictures.length
+          }`}</span>
           <i className="fas fa-chevron-right" onClick={handleNextImage}></i>
         </div>
       ) : (
         // Sinon, affichez simplement l'image unique
-        <img src={pictures[0]} alt={housingData.title} />
+        <img src={housingData.pictures[0]} alt={housingData.title} />
       )}
       <div className="housing__infos">
         <div className="housing__infos__title">
